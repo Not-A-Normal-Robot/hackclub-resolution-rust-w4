@@ -1,5 +1,6 @@
 use std::{
     fs,
+    io::Write,
     path::{Path, PathBuf},
 };
 
@@ -16,6 +17,7 @@ struct Cli {
 #[derive(Debug, Subcommand)]
 enum Command {
     Run { path: PathBuf },
+    Repl,
 }
 
 fn main() {
@@ -23,6 +25,9 @@ fn main() {
     match cli.command {
         Command::Run { path } => {
             run(&path);
+        }
+        Command::Repl => {
+            repl();
         }
     }
 }
@@ -49,5 +54,45 @@ fn run(path: &Path) {
     if let Err(e) = int.run(program) {
         eprintln!("Runtime error: {e}");
         std::process::exit(1);
+    }
+}
+
+fn repl() {
+    const PREFIX: &str = "L: ";
+    const LINE_CAPACITY: usize = 16384;
+
+    let mut line = String::with_capacity(LINE_CAPACITY);
+    let parser = ProgramParser::new();
+    let mut int = Interpreter::new();
+
+    loop {
+        eprint!("{PREFIX}");
+        let _ = std::io::stderr().flush();
+
+        line.clear();
+        line.shrink_to(LINE_CAPACITY);
+
+        if let Err(e) = std::io::stdin().read_line(&mut line) {
+            eprintln!("Failed to read from stdin: {e}");
+            std::process::exit(1);
+        }
+
+        if line.is_empty() {
+            eprintln!();
+            break;
+        }
+
+        let stmts = match parser.parse(&line) {
+            Ok(stmts) => stmts,
+            Err(e) => {
+                eprintln!("Syntax error: {e}");
+                continue;
+            }
+        };
+
+        if let Err(e) = int.run(stmts) {
+            eprintln!("Runtime error: {e}");
+            continue;
+        }
     }
 }
