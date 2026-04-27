@@ -9,6 +9,7 @@ You'll need Cargo, which you can get in https://rustup.rs/
 In the `luminia-cli` directory, do `cargo install --path .` to install luminia-cli.
 
 Then you can run scripts with it, like `luminia-cli run script.lum`
+Alternatively, use the repl: `luminia-cli repl`
 
 ## Example Script
 

@@ -16,7 +16,9 @@ struct Cli {
 
 #[derive(Debug, Subcommand)]
 enum Command {
+    /// Run a Luminia script.
     Run { path: PathBuf },
+    /// Start a Luminia REPL session.
     Repl,
 }
 
