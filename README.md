@@ -5,9 +5,17 @@ A small programming language made for Week 4 of Hack Club Resolution Rust.
 ## Dependencies
 You'll need Cargo, which you can get in https://rustup.rs/
 
+## Running
+In the `luminia-cli` directory, do `cargo install --path .` to install luminia-cli.
+
+Then you can run scripts with it, like `luminia-cli run script.lum`
+
 ## Example Script
 
 ```
+# file: script.lum
+# Comments use #
+
 def greet(name)
     println("Hello, " + name + "!");
 end;
@@ -43,5 +51,9 @@ end;
 
 ## New Features
 - Internal support for Rust functions
-- `println` and `print`
-- `eprintln` and `eprint`
+- `println()` and `print()`
+- `eprintln()` and `eprint()`
+- `panic()`
+
+## Syntax changes
+- removed `puts`

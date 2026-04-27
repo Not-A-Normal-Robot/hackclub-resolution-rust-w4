@@ -31,3 +31,5 @@ if 10 > 5 then
 else
     println("this won't print");
 end;
+
+# panic("oh no");
