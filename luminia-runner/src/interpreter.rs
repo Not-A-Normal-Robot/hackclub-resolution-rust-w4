@@ -121,6 +121,19 @@ impl Interpreter {
                     })),
                 },
             ),
+            (
+                "panic".into(),
+                Function {
+                    params: vec!["_".to_string()],
+                    body: FunctionBody::Native(Box::new(|vals| {
+                        Err(RuntimeError {
+                            kind: RuntimeErrorKind::Panic {
+                                inner: vals.first().cloned().unwrap_or(Value::Nil),
+                            },
+                        })
+                    })),
+                },
+            ),
         ])
     }
 

@@ -66,6 +66,9 @@ pub enum RuntimeErrorKind {
         expected_arg_count: usize,
         given_arg_count: usize,
     },
+    Panic {
+        inner: Value,
+    },
 }
 
 impl Display for RuntimeErrorKind {
@@ -92,6 +95,9 @@ impl Display for RuntimeErrorKind {
                     f,
                     "function `{function_name}` expected {expected_arg_count} arguments, got {given_arg_count} arguments instead"
                 )
+            }
+            Self::Panic { inner } => {
+                write!(f, "panic: {inner}")
             }
         }
     }
