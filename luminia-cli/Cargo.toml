@@ -1,0 +1,9 @@
+[package]
+name = "luminia-cli"
+version = "0.1.0"
+edition = "2024"
+description = "A simple CLI for a simple language"
+
+[dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
+luminia-runner = { path = "../luminia-runner" }

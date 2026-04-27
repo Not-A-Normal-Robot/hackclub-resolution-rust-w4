@@ -1,0 +1,15 @@
+[package]
+name = "luminia-runner"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+either = "1.15.0"
+lalrpop-util = { version = "0.23.1", features = ["lexer", "unicode"] }
+thiserror = "2.0.18"
+
+[build-dependencies]
+lalrpop = "0.23.1"
+
+[dev-dependencies]
+hex = "0.4.3"
