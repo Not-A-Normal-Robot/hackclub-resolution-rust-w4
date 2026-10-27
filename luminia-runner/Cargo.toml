@@ -1,7 +1,9 @@
 [package]
 name = "hcrrw4-luminia-runner"
-version = "0.1.0"
+version = "0.1.1-pre1"
 edition = "2024"
+description = "A runtime for a simple language"
+repository = "https://github.com/Not-A-Normal-Robot/hackclub-resolution-rust-w4"
 
 [dependencies]
 either = "1.15.0"
