@@ -1,6 +1,6 @@
 [package]
 name = "hcrrw4-luminia-cli"
-version = "0.1.1-pre2"
+version = "0.1.1"
 edition = "2024"
 license = "GPL-3.0-or-later"
 description = "A simple CLI for a simple language"
@@ -8,7 +8,7 @@ repository = "https://github.com/Not-A-Normal-Robot/hackclub-resolution-rust-w4"
 
 [dependencies]
 clap = { version = "4.6.1", features = ["derive"] }
-hcrrw4-luminia-runner = { version = "0.1.1-pre1", path = "../luminia-runner" }
+hcrrw4-luminia-runner = { version = "0.1.1", path = "../luminia-runner" }
 
 [[bin]]
 name = "luminia_cli"

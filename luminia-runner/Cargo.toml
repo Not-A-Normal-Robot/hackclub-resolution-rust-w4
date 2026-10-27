@@ -1,6 +1,6 @@
 [package]
 name = "hcrrw4-luminia-runner"
-version = "0.1.1-pre2"
+version = "0.1.1"
 edition = "2024"
 license = "GPL-3.0-or-later"
 description = "A runtime for a simple language"
