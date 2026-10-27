@@ -1,5 +1,5 @@
 [package]
-name = "luminia-runner"
+name = "hcrrw4-luminia-runner"
 version = "0.1.0"
 edition = "2024"
 
@@ -13,3 +13,6 @@ lalrpop = "0.23.1"
 
 [dev-dependencies]
 hex = "0.4.3"
+
+[lib]
+name = "luminia_runner"
