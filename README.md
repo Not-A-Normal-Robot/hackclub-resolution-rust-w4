@@ -5,11 +5,17 @@ A small programming language made for Week 4 of Hack Club Resolution Rust.
 ## Dependencies
 You'll need Cargo, which you can get in https://rustup.rs/
 
-## Running
-In the `luminia-cli` directory, do `cargo install --path .` to install luminia-cli.
+## Installation
 
-Then you can run scripts with it, like `luminia-cli run script.lum`
-Alternatively, use the repl: `luminia-cli repl`
+Run the following:
+```
+cargo install hcrrw4-luminia-cli
+```
+
+Then you can use the installed `luminia_cli` executable.
+
+For example, to run a script: `luminia_cli run script.lum`
+Alternatively, use the repl: `luminia_cli repl`
 
 ## Example Script
 
