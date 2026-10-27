@@ -1,7 +1,8 @@
 [package]
 name = "hcrrw4-luminia-runner"
-version = "0.1.1-pre1"
+version = "0.1.1-pre2"
 edition = "2024"
+license = "GPL-3.0-or-later"
 description = "A runtime for a simple language"
 repository = "https://github.com/Not-A-Normal-Robot/hackclub-resolution-rust-w4"
 
